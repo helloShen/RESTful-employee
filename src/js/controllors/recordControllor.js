@@ -10,8 +10,10 @@ export function recordsList(req, res, next) {
         err.status = 404;
         return next(err);
       }
+
       // send json object
       res.json(records);
+
       // render in handlebars template
       // res.locals.records = records;
       // res.render('records', {layout: 'index'});
@@ -28,8 +30,10 @@ export function singleRecord(req, res, next) {
         err.status = 404;
         return next(err);
       }
+
       // send json object
       res.json(record);
+
       // render in handlebars template
       // res.locals.record = record;
       // res.render('record', {layout: 'index'});
@@ -66,6 +70,7 @@ export function updateRecord(req, res, next) {
   });
   Record.findByIdAndUpdate(req.params.id, newRecord, {}, (err, theRecord) => {
     if (err) return next(err);
+    // res.redirect('/');
     res.json(theRecord);
   });
 }
@@ -77,6 +82,8 @@ export function deleteRecord(req, res, next) {
   }
   Record.findByIdAndRemove(req.params.id, (err) => {
     if (err) return next(err);
+    res.ok = true;
+    res.json();
   });
 }
 

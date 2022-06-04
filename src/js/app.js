@@ -17,7 +17,6 @@ app.use(helmet());
 // view engine setup
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename); // module doesn't have __dirname
-console.log(__dirname);
 app.set('views', path.join(__dirname, '../views'));
 const hbs = create();
 app.engine('handlebars', hbs.engine);

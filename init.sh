@@ -18,4 +18,7 @@ echo $ignoreScript > .gitignore
 npm install mongodb mongoose express cors dotenv helmet morgan jade express-handlebars
 npm install --save-dev nodemon
 
+### typescript
+npm install --save @types/express @types/cors @types/debug
+
 

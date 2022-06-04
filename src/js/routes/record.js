@@ -7,6 +7,7 @@ recordRouter.get('/', recordsControllor.recordsList);
 recordRouter.get('/add', recordsControllor.addRecordForm);
 recordRouter.post('/add', recordsControllor.addRecord);
 recordRouter.get('/:id', recordsControllor.singleRecord);
-recordRouter.get('/update/:id', recordsControllor.updateRecord);
+recordRouter.post('/edit/:id', recordsControllor.updateRecord);
+recordRouter.get('/delete/:id', recordsControllor.deleteRecord);
 
 export default recordRouter;
